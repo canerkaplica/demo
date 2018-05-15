@@ -1,0 +1,13 @@
+---
+applications:
+  - name: demo
+    memory: 1G
+    instances: 1
+    host: demo
+    health-check-type: none
+    no-route: true
+    path: './target/demo-SNAPSHOT.jar'
+    env:
+      JAVA_OPTS: '-Duser.timezone=Europe/Istanbul'
+      SPRING_CLOUD_CONFIG_LABEL: dev
+      TRUST_CERTS: api.system.pcf.yapikredi.com.tr
